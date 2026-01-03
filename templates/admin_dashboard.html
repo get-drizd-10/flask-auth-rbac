@@ -3,12 +3,13 @@
 {% block content %}
 <h2>Admin Dashboard</h2>
 
-<table>
+<table class="admin-table">
     <thead>
         <tr>
             <th>ID</th>
             <th>Username</th>
             <th>Role</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -16,17 +17,16 @@
         <tr>
             <td>{{ user[0] }}</td>
             <td>{{ user[1] }}</td>
-            <td>
-    {{ user[2] }}
-    {% if user[1] != session["user"] %}
-        {% if user[2] == "user" %}
-            <a href="/admin/update-role/{{ user[0] }}/admin">Promote</a>
-        {% else %}
-            <a href="/admin/update-role/{{ user[0] }}/user">Demote</a>
-        {% endif %}
-    {% endif %}
-        </td>
-
+            <td>{{ user[2] }}</td>
+            <td class="action-cell">
+                {% if user[2] == "user" %}
+                    <a href="/admin/update-role/{{ user[0] }}/admin" class="btn-link">
+                        Promote
+                    </a>
+                {% else %}
+                    —
+                {% endif %}
+            </td>
         </tr>
         {% endfor %}
     </tbody>
