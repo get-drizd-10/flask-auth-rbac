@@ -176,5 +176,37 @@ body {
     align-items: flex-start;
     padding-top: 40px;
 }
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: center;
+    font-size: 14px;
+}
+
+.admin-table th {
+    background: #f9fafb;
+    font-weight: 600;
+}
+
+.action-cell {
+    text-align: center;
+}
+
+.btn-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
 
 
